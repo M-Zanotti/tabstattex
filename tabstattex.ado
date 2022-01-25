@@ -119,7 +119,7 @@ file write texfile "\usepackage{multirow}" _n
 file write texfile "\usepackage{pdflscape}" _n
 file write texfile "\usepackage{etoolbox}" _n
 file write texfile "\usepackage{color}" _n
-file write texfile "\usepackage{colortbl}" _n
+file write texfile "\usepackage{colortbl}" _n _n
 
 ** commands
 file write texfile "\renewcommand{\arraystretch}{1.1}" _n
@@ -128,15 +128,16 @@ file write texfile "\newcolumntype{Z}{>{\centering\arraybackslash}X}" _n
 file write texfile "\newcommand\setrow[1]{\gdef\rowmac{#1}#1\ignorespaces}" _n
 file write texfile "\newcolumntype{$}{>{\global\let\currentrowstyle\relax}}" _n
 file write texfile "\newcolumntype{^}{>{\currentrowstyle}}" _n
-file write texfile "\newcommand{\rowstyle}[1]{\gdef\currentrowstyle{#1}#1\ignorespaces}" _n _n _n
+file write texfile "\newcommand{\rowstyle}[1]{\gdef\currentrowstyle{#1}#1\ignorespaces}" _n _n
 
-file write texfile "\begin{document}" _n _n 
+file write texfile "\begin{document}" _n _n _n
 
 
-file write texfile "\begin{center}" _n _n
+
+file write texfile "\begin{center}" _n
 
 if "`landscape'" != "" file write texfile  "\begin{sidewaystable}[htp]" _n
-else file write texfile "\begin{table}[`position']" _n
+else file write texfile "\begin{table}[`position']" _n _n _n
 if "`caption'"!="" file write texfile "\caption{`caption'}" _n
 if "`label'"!="" file write texfile "\label{tbl:`label'}" _n
 file write texfile "\centering" _n
@@ -514,8 +515,11 @@ if "`note'" != "" file write texfile "\multicolumn{`table_ncols'}{l}{\scriptsize
 file write texfile  "\end{tabularx}" _n
 
 if "`landscape'" != "" file write texfile "\end{sidewaystable}" _n
-else file write texfile  "\end{table}" _n
-file write texfile  "\end{center}" _n
+else file write texfile  "\end{table}" _n _n
+file write texfile  "\end{center}" _n _n
+
+file write texfile "\begin{document}" _n  
+
 
 if "`texfile'" != "" file close texfile
 
