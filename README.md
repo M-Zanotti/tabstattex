@@ -1,5 +1,5 @@
 # tabstattex
-Command for exportin `tabstat` results in Tex (Stata).
+Command for export in `tabstat` results in Tex (Stata).
 
 # 🖥 Installing
 
