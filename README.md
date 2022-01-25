@@ -13,7 +13,7 @@ And "click here to install"
 
 - Using
 
-Similar to the original "tabstat" Stata command, with few more options for Tex file.
+Similar to the original "tabstat" Stata command, with few more options for Tex file, see help file for using details.
 
 texfile(filename.tex)
 caption("Table caption")
