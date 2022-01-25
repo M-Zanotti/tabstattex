@@ -2,8 +2,11 @@ capture program drop tabstattex
 program define tabstattex
 
 
+*! version 0.0.9  TomaHawk  17jul2017
+**                undocumented option vardisp(none)
 
-version 14
+*! version 0.0.8  TomaHawk  27nov2017
+version 16
 
 syntax varlist [if] [in] [, by(name) Statistics(str asis) Columns(string) format(str asis) NOTotal Missing  ///
                             texfile(str) caption(str) label(str) intc1(str) intc2(str) note(str) widthtable(string) ///
