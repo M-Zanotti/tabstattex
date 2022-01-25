@@ -1,7 +1,5 @@
 # tabstattex
-Export tabstat command's results in Tex (Stata).
-
-@M.Zanotti; Jan,25 2022
+Command for exportin `tabstat` results in Tex (Stata).
 
 # Installing
 
