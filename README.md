@@ -7,7 +7,9 @@ Export tabstat command's results in Tex (Stata).
 
 In Stata, command:
 
-net from https://raw.githubusercontent.com/M-Zanotti/tabstattex/master/
+net from https://raw.githubusercontent.com/M-Zanotti/tabstattex/main/
+
+Click on: "tabstattex";   
 
 And "click here to install"
 
