@@ -2,11 +2,7 @@ capture program drop tabstattex
 program define tabstattex
 
 
-*! version 0.0.9  TomaHawk  17jul2017
-**                undocumented option vardisp(none)
-
-*! version 0.0.8  TomaHawk  27nov2017
-version 14.1
+version 7
 
 syntax varlist [if] [in] [, by(name) Statistics(str asis) Columns(string) format(str asis) NOTotal Missing  ///
                             texfile(str) caption(str) label(str) intc1(str) intc2(str) note(str) widthtable(string) ///
@@ -103,6 +99,11 @@ else {
 if "`texfile'" != "" {
   qui file open texfile using "`texfile'", write replace
 }
+** Build .tex file
+
+file write texfile "\documentclass[]{article}" _n
+file write texfile "\setlength{\pdfpagewidth}{8.5in} \setlength{\pdfpageheight}{11in}" _n
+
 
 ** Add packages  
 file write texfile "\usepackage{booktabs}" _n
@@ -127,11 +128,12 @@ file write texfile "\newcolumntype{Z}{>{\centering\arraybackslash}X}" _n
 file write texfile "\newcommand\setrow[1]{\gdef\rowmac{#1}#1\ignorespaces}" _n
 file write texfile "\newcolumntype{$}{>{\global\let\currentrowstyle\relax}}" _n
 file write texfile "\newcolumntype{^}{>{\currentrowstyle}}" _n
-file write texfile "\newcommand{\rowstyle}[1]{\gdef\currentrowstyle{#1}#1\ignorespaces}" _n
+file write texfile "\newcommand{\rowstyle}[1]{\gdef\currentrowstyle{#1}#1\ignorespaces}" _n _n _n
+
+file write texfile "\begin{document}" _n _n 
 
 
-
-file write texfile "\begin{center}" _n
+file write texfile "\begin{center}" _n _n
 
 if "`landscape'" != "" file write texfile  "\begin{sidewaystable}[htp]" _n
 else file write texfile "\begin{table}[`position']" _n
@@ -142,7 +144,7 @@ file write texfile "\centering" _n
 if "`fontsize'" != "" file write texfile "\\`fontsize'" _n
 
 **di "\begin{tabular}{`def_cols'}"
-file write texfile  "\begin{tabularx}{`widthtable'}{`def_cols'}" _n
+file write texfile  "\begin{tabularx}{`widthtable'}{`def_cols'}" _n _n
 file write texfile  "\toprule" _n
 
 ** Identation
