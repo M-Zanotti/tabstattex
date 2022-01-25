@@ -127,7 +127,7 @@ file write texfile "\renewcommand{\arraystretch}{1.1}" _n
 file write texfile "\newcolumntype{Z}{>{\centering\arraybackslash}X}" _n
 
 file write texfile "\newcommand\setrow[1]{\gdef\rowmac{#1}#1\ignorespaces}" _n
-file write texfile "\newcolumntype{$}{>{\global\let\currentrowstyle\relax}}" _n
+file write texfile "\newcolumntype{X}{>{\global\let\currentrowstyle\relax}}" _n
 file write texfile "\newcolumntype{^}{>{\currentrowstyle}}" _n
 file write texfile "\newcommand{\rowstyle}[1]{\gdef\currentrowstyle{#1}#1\ignorespaces}" _n _n
 
@@ -157,8 +157,8 @@ if "`columns'" == "statistics" {
   foreach i in `cols_int' {
     if "`s1'" == "" {
       if "`i'"=="mean" local ii="Mean"
-      else if "`i'"=="count" local ii="N_obs"
-      else if "`i'"=="n" local ii="N_obs"
+      else if "`i'"=="count" local ii="NObs"
+      else if "`i'"=="n" local ii="NObs"
       else if "`i'"=="sum" local ii="Sum"
       else if "`i'"=="max" local ii="Max"
       else if "`i'"=="min" local ii="Min"
@@ -233,8 +233,8 @@ if "`by'"!="" {
     foreach i in `cols_int' {
       if "`s1'" == "" {
              if "`i'"=="mean" local ii="Mean"
-      		else if "`i'"=="count" local ii="N_obs"
-      		else if "`i'"=="n" local ii="N_obs"
+      		else if "`i'"=="count" local ii="NObs"
+      		else if "`i'"=="n" local ii="NObs"
       		else if "`i'"=="sum" local ii="Sum"
       		else if "`i'"=="max" local ii="Max"
       		else if "`i'"=="min" local ii="Min"
@@ -309,8 +309,8 @@ if "`by'"== "" {
         if `default_stat' == 1 {
           local i : word `r' of `statistics'
                if "`i'"=="mean" local ii="Mean"
-     		 else if "`i'"=="count" local ii="N_obs"
-     		 else if "`i'"=="n" local ii="N_obs"
+     		 else if "`i'"=="count" local ii="NObs"
+     		 else if "`i'"=="n" local ii="NObs"
       		else if "`i'"=="sum" local ii="Sum"
      		 else if "`i'"=="max" local ii="Max"
       		else if "`i'"=="min" local ii="Min"
@@ -425,8 +425,8 @@ else {
         if `default_stat' == 1 {
           local i : word `r' of `statistics'
            if "`i'"=="mean" local ii="Mean"
-      		else if "`i'"=="count" local ii="N_obs"
-     		 else if "`i'"=="n" local ii="N_obs"
+      		else if "`i'"=="count" local ii="NObs"
+     		 else if "`i'"=="n" local ii="NObs"
      		 else if "`i'"=="sum" local ii="Sum"
      		 else if "`i'"=="max" local ii="Max"
      		 else if "`i'"=="min" local ii="Min"
@@ -467,8 +467,8 @@ else {
        if `default_stat' == 1 {
          local i : word `r' of `statistics'
               if "`i'"=="mean" local ii="Mean"
-      		else if "`i'"=="count" local ii="N_obs"
-      		else if "`i'"=="n" local ii="N_obs"
+      		else if "`i'"=="count" local ii="NObs"
+      		else if "`i'"=="n" local ii="NObs"
       		else if "`i'"=="sum" local ii="Sum"
       		else if "`i'"=="max" local ii="Max"
       		else if "`i'"=="min" local ii="Min"
