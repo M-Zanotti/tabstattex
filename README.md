@@ -1,7 +1,7 @@
 # tabstattex
 Command for exportin `tabstat` results in Tex (Stata).
 
-# Installing
+# 🖥 Installing
 
 In Stata, type command:
 
@@ -14,7 +14,7 @@ Then click on: `tabstattex`,
 Finally select: `click here to install`
 
 
-# Using
+# 🚀 Using
 
 Similar to the original `tabstat` Stata command, with few more options for Tex file such as .tex file name, table caption, etc.
 
@@ -36,6 +36,6 @@ Export statistics `(n mean sd p5 p25 p50 p75 p95)` for variables `profit`, `Gat`
 👤 **Marco Zanotti**
 
 - Github: [@M-Zanotti](https://github.com/M-Zanotti)
-- LinkedIn: (https://www.linkedin.com/in/marco-zanotti-a3a615b3/)
+- LinkedIn: [Marco Zanotti](https://www.linkedin.com/in/marco-zanotti-a3a615b3/)
 
 
