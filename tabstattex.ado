@@ -341,6 +341,9 @@ if "`by'"== "" {
 
     }
   }
+  
+}
+ 
 else {
   if "`columns'" == "statistics" {
     matrix StatTotal_stat = StatTotal'
