@@ -6,7 +6,7 @@ program define tabstattex
 **                undocumented option vardisp(none)
 
 *! version 0.0.8  TomaHawk  27nov2017
-version 16
+version 14.1
 
 syntax varlist [if] [in] [, by(name) Statistics(str asis) Columns(string) format(str asis) NOTotal Missing  ///
                             texfile(str) caption(str) label(str) intc1(str) intc2(str) note(str) widthtable(string) ///
