@@ -2,7 +2,7 @@ capture program drop tabstattex
 program define tabstattex
 
 
-version 7
+version 14.1
 
 syntax varlist [if] [in] [, by(name) Statistics(str asis) Columns(string) format(str asis) NOTotal Missing  ///
                             texfile(str) caption(str) label(str) intc1(str) intc2(str) note(str) widthtable(string) ///
@@ -99,10 +99,11 @@ else {
 if "`texfile'" != "" {
   qui file open texfile using "`texfile'", write replace
 }
+
+
 ** Build .tex file
 
 file write texfile "\documentclass[]{article}" _n
-file write texfile "\setlength{\pdfpagewidth}{8.5in} \setlength{\pdfpageheight}{11in}" _n
 
 
 ** Add packages  
@@ -132,9 +133,8 @@ file write texfile "\newcommand{\rowstyle}[1]{\gdef\currentrowstyle{#1}#1\ignore
 
 file write texfile "\begin{document}" _n _n _n
 
-
-
 file write texfile "\begin{center}" _n
+
 
 if "`landscape'" != "" file write texfile  "\begin{sidewaystable}[htp]" _n
 else file write texfile "\begin{table}[`position']" _n _n _n
@@ -347,6 +347,7 @@ if "`by'"== "" {
   
 }
  
+ 
 else {
   if "`columns'" == "statistics" {
     matrix StatTotal_stat = StatTotal'
@@ -518,7 +519,7 @@ if "`landscape'" != "" file write texfile "\end{sidewaystable}" _n
 else file write texfile  "\end{table}" _n _n
 file write texfile  "\end{center}" _n _n
 
-file write texfile "\begin{document}" _n  
+file write texfile "\end{document}" _n  
 
 
 if "`texfile'" != "" file close texfile
