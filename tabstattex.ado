@@ -210,7 +210,7 @@ if "`by'"!="" {
   else local int_cols = "`: variable label `byvar''"
 
   if "`columns'" == "variables" {
-    if "`intc2'"=="" local intc2 = "Statistiche"
+    if "`intc2'"=="" local intc2 = "Statistics"
     local int_cols = "`int_cols' & `intc2' "
     if "`vardisp'" == "varlabel" {
       foreach i in `varlist' {
