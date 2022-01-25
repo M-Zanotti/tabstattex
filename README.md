@@ -3,24 +3,41 @@ Export tabstat command's results in Tex (Stata).
 
 @M.Zanotti; Jan,25 2022
 
-- Installing
+# Installing
 
-In Stata, command:
+In Stata, type command:
 
+```sh
 net from https://raw.githubusercontent.com/M-Zanotti/tabstattex/main/
+```
 
-Click on: "tabstattex";   
+Then click on: `tabstattex`,   
 
-And "click here to install"
+Finally select: `click here to install`
 
-- Using
 
-Similar to the original "tabstat" Stata command, with few more options for Tex file, see help file for using details.
+# Using
 
-texfile(filename.tex)
-caption("Table caption")
+Similar to the original `tabstat` Stata command, with few more options for Tex file such as .tex file name, table caption, etc.
 
-e.g.
+For using details see `help`file:
+```sh
+help tabstattex
+```
 
+
+Example:
+
+```sh
 tabstattex profit Gat beta, stat(n mean sd p5 p25 p50 p75 p95) col(stat) texfile(Tab1.tex) caption("Tab1_SummaryStats")
+```
+
+Export statistics `(n mean sd p5 p25 p50 p75 p95)` for variables `profit`, `Gat`, and `beta`, generating .tex file `Tab1.tex` with caption (above table) `Tab1_SummaryStats`.
+
+# Author
+👤 **Marco Zanotti**
+
+- Github: [@M-Zanotti](https://github.com/M-Zanotti)
+- LinkedIn: (https://www.linkedin.com/in/marco-zanotti-a3a615b3/)
+
 
